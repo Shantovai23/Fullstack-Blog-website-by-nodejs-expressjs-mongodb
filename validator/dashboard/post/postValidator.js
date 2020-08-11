@@ -4,7 +4,7 @@ const cheerio = require('cheerio')
 module.exports= [
     body('title')
         .not().isEmpty().withMessage('Title can not be empty')
-        .isLength({max : 100}).withMessage('Title can not be greater than 100 characters')
+        .isLength({max : 1000}).withMessage('Title can not be greater than 100 characters')
         .trim()
     ,
     body('body')
@@ -13,7 +13,7 @@ module.exports= [
             let node = cheerio.load(value)
             let text = node.text()
 
-            if(text.length>5000){
+            if(text.length>500000000){
                 throw new Error('Body can not greater than 5000 chars')
             }
             return true
