@@ -141,7 +141,7 @@ exports.editProfilePostController =async (req,res,next) => {
       github
     }=req.body
        
-   if(errors.isEmpty()){
+   if(!errors.isEmpty()){
       
    return res.render('pages/dashboard/create-profile', {
     title: 'Create Your Profile',
