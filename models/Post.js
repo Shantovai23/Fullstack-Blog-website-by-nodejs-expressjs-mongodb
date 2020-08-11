@@ -11,12 +11,12 @@ const postSchema = new Schema({
         type : String ,
         required : true ,
         trim : true ,
-        maxlength : 100
+        maxlength : 1000
     },
     body : {
         type : String,
         required : true,
-        maxlength : 5000
+        maxlength : 500000000
     },
     author :{
         type : Schema.Types.ObjectId,
